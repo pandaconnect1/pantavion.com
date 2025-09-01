@@ -1,8 +1,8 @@
-name: Deploy static content to Pages
+name: Deploy static site to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: [ "main" ]
   workflow_dispatch:
 
 permissions:
@@ -30,8 +30,9 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "."   # ανέβασε όλο τον φάκελο (index.html, style.css, script.js)
+          path: ./
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
